@@ -1,11 +1,13 @@
 {
   "name": "minimal-typescript",
   "packageManager": "yarn@3.6.1",
+  "type": "module",
   "scripts": {
     "service": "node -r esbuild-register ./src/index.ts",
-    "web": "esbuild ./src/index.ts --outdir=web --bundle --watch --servedir=web"
+    "web": "esbuild ./src/index.ts ./src/workers/* --format=esm --outdir=web --bundle --watch --servedir=web"
   },
   "devDependencies": {
+    "@types/audioworklet": "^0.0.48",
     "esbuild": "^0.18.11",
     "esbuild-register": "^3.4.2",
     "typescript": "^5.1.6"
