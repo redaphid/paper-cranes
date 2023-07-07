@@ -1,1 +1,2 @@
-console.log('hi');
+let a:string = "hi"
+console.log({a})
