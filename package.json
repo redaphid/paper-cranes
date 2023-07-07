@@ -1,6 +1,9 @@
 {
   "name": "minimal-typescript",
   "packageManager": "yarn@3.6.1",
+  "scripts": {
+    "start": "node --loader esbuild-register/loader -r esbuild-register ./index.ts"
+  },
   "devDependencies": {
     "esbuild": "^0.18.11",
     "esbuild-register": "^3.4.2"
