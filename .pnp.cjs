@@ -29,7 +29,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["esbuild", "npm:0.18.11"],\
-            ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"]\
+            ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -315,7 +316,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["minimal-typescript", "workspace:."],\
             ["esbuild", "npm:0.18.11"],\
-            ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"]\
+            ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"],\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -325,6 +327,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/ms-npm-2.1.2-ec0c1512ff-673cdb2c31.zip/node_modules/ms/",\
           "packageDependencies": [\
             ["ms", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typescript", [\
+        ["patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-bd21d74a9d-f53bfe97f7.zip/node_modules/typescript/",\
+          "packageDependencies": [\
+            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
           ],\
           "linkType": "HARD"\
         }]\
