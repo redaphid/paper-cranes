@@ -1,0 +1,8 @@
+{
+  "name": "minimal-typescript",
+  "packageManager": "yarn@3.6.1",
+  "devDependencies": {
+    "esbuild": "^0.18.11",
+    "esbuild-register": "^3.4.2"
+  }
+}
