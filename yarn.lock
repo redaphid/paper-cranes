@@ -166,6 +166,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/meyda@npm:^4.3.8":
+  version: 4.3.8
+  resolution: "@types/meyda@npm:4.3.8"
+  checksum: aed27bfac4bd158e41586b97626bf709688daf6dd54070922a3d22ddab7bd74b2c86c2c66949dd245d285f911aaa3a296a06db44f11f11710228ed14a64be4a1
+  languageName: node
+  linkType: hard
+
 "@types/prop-types@npm:*":
   version: 15.7.11
   resolution: "@types/prop-types@npm:15.7.11"
@@ -200,10 +207,71 @@ __metadata:
   languageName: node
   linkType: hard
 
+"babel-plugin-add-module-exports@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "babel-plugin-add-module-exports@npm:0.2.1"
+  checksum: 0d40e7b970161a10960fbbd0492565ae2f3f4872b4da089f8f5bb874cfac4e38e088e4d96bc33cef22a8963774abe84622feeebbbe049ad95c4ee33c907b277d
+  languageName: node
+  linkType: hard
+
+"buffer-alloc-unsafe@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "buffer-alloc-unsafe@npm:1.1.0"
+  checksum: c5e18bf51f67754ec843c9af3d4c005051aac5008a3992938dda1344e5cfec77c4b02b4ca303644d1e9a6e281765155ce6356d85c6f5ccc5cd21afc868def396
+  languageName: node
+  linkType: hard
+
+"buffer-alloc@npm:^1.1.0":
+  version: 1.2.0
+  resolution: "buffer-alloc@npm:1.2.0"
+  dependencies:
+    buffer-alloc-unsafe: ^1.1.0
+    buffer-fill: ^1.0.0
+  checksum: 560cd27f3cbe73c614867da373407d4506309c62fe18de45a1ce191f3785ec6ca2488d802ff82065798542422980ca25f903db078c57822218182c37c3576df5
+  languageName: node
+  linkType: hard
+
+"buffer-fill@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "buffer-fill@npm:1.0.0"
+  checksum: c29b4723ddeab01e74b5d3b982a0c6828f2ded49cef049ddca3dac661c874ecdbcecb5dd8380cf0f4adbeb8cff90a7de724126750a1f1e5ebd4eb6c59a1315b1
+  languageName: node
+  linkType: hard
+
+"buffer-from@npm:^1.0.0":
+  version: 1.1.2
+  resolution: "buffer-from@npm:1.1.2"
+  checksum: 0448524a562b37d4d7ed9efd91685a5b77a50672c556ea254ac9a6d30e3403a517d8981f10e565db24e8339413b43c97ca2951f10e399c6125a0d8911f5679bb
+  languageName: node
+  linkType: hard
+
+"core-util-is@npm:~1.0.0":
+  version: 1.0.3
+  resolution: "core-util-is@npm:1.0.3"
+  checksum: 9de8597363a8e9b9952491ebe18167e3b36e7707569eed0ebf14f8bba773611376466ae34575bca8cfe3c767890c859c74056084738f09d4e4a6f902b2ad7d99
+  languageName: node
+  linkType: hard
+
 "csstype@npm:^3.0.2":
   version: 3.1.2
   resolution: "csstype@npm:3.1.2"
   checksum: e1a52e6c25c1314d6beef5168da704ab29c5186b877c07d822bd0806717d9a265e8493a2e35ca7e68d0f5d472d43fac1cdce70fd79fd0853dff81f3028d857b5
+  languageName: node
+  linkType: hard
+
+"dct@npm:0.1.0":
+  version: 0.1.0
+  resolution: "dct@npm:0.1.0"
+  checksum: d608bcb93cba9efff51f26e7874079b407f7a3dd43d4493619029dc55ceeb30eb25d31af5c9508b62852b2aece3988733b0920cbb44e6bd9b146575309339999
+  languageName: node
+  linkType: hard
+
+"debug@npm:2, debug@npm:^2.2.0":
+  version: 2.6.9
+  resolution: "debug@npm:2.6.9"
+  dependencies:
+    ms: 2.0.0
+  checksum: d2f51589ca66df60bf36e1fa6e4386b318c3f1e06772280eea5b1ae9fd3d05e9c2b7fd8a7d862457d00853c75b00451aa2d7459b924629ee385287a650f58fe6
   languageName: node
   linkType: hard
 
@@ -307,6 +375,29 @@ __metadata:
   languageName: node
   linkType: hard
 
+"fftjs@npm:0.0.4":
+  version: 0.0.4
+  resolution: "fftjs@npm:0.0.4"
+  dependencies:
+    babel-plugin-add-module-exports: ^0.2.1
+  checksum: 83683aa66187b26422bfc2605b0ef8feb845e268239e2f4d14fc406f354d3e146909a5c5fb581ca62ae2d2f480f29bc3ece8f8b035f04d337d3e9d66f7a98d4f
+  languageName: node
+  linkType: hard
+
+"inherits@npm:~2.0.1":
+  version: 2.0.4
+  resolution: "inherits@npm:2.0.4"
+  checksum: 4a48a733847879d6cf6691860a6b1e3f0f4754176e4d71494c41f3475553768b10f84b5ce1d40fbd0e34e6bfbb864ee35858ad4dd2cf31e02fc4a154b724d7f1
+  languageName: node
+  linkType: hard
+
+"isarray@npm:0.0.1":
+  version: 0.0.1
+  resolution: "isarray@npm:0.0.1"
+  checksum: 49191f1425681df4a18c2f0f93db3adb85573bcdd6a4482539d98eac9e705d8961317b01175627e860516a2fc45f8f9302db26e5a380a97a520e272e2a40a8d4
+  languageName: node
+  linkType: hard
+
 "js-tokens@npm:^3.0.0 || ^4.0.0":
   version: 4.0.0
   resolution: "js-tokens@npm:4.0.0"
@@ -325,25 +416,55 @@ __metadata:
   languageName: node
   linkType: hard
 
+"meyda@npm:^5.6.2":
+  version: 5.6.2
+  resolution: "meyda@npm:5.6.2"
+  dependencies:
+    dct: 0.1.0
+    fftjs: 0.0.4
+    node-getopt: ^0.3.2
+    wav: ^1.0.2
+  bin:
+    meyda: bin/cli.js
+  checksum: b47fe48dce88ed4c6007ff54fbe133527851869abe7162d2fb9e1a6ab76b08da4e995eb8e1396197b914af0af395a80faf33bf8c7c57b280088c54edb144a7c8
+  languageName: node
+  linkType: hard
+
 "minimal-typescript@workspace:.":
   version: 0.0.0-use.local
   resolution: "minimal-typescript@workspace:."
   dependencies:
     "@types/audioworklet": ^0.0.48
+    "@types/meyda": ^4.3.8
     "@types/react": ^18.2.39
     "@types/react-dom": ^18.2.17
     esbuild: ^0.18.11
     esbuild-register: ^3.4.2
+    meyda: ^5.6.2
     react: ^18.2.0
     react-dom: ^18.2.0
     typescript: ^5.3.2
   languageName: unknown
   linkType: soft
 
+"ms@npm:2.0.0":
+  version: 2.0.0
+  resolution: "ms@npm:2.0.0"
+  checksum: 0e6a22b8b746d2e0b65a430519934fefd41b6db0682e3477c10f60c76e947c4c0ad06f63ffdf1d78d335f83edee8c0aa928aa66a36c7cd95b69b26f468d527f4
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.1.2":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
   checksum: 673cdb2c3133eb050c745908d8ce632ed2c02d85640e2edb3ace856a2266a813b30c613569bf3354fdf4ea7d1a1494add3bfa95e2713baa27d0c2c71fc44f58f
+  languageName: node
+  linkType: hard
+
+"node-getopt@npm:^0.3.2":
+  version: 0.3.2
+  resolution: "node-getopt@npm:0.3.2"
+  checksum: 62e415e03717676bac0ed39198157256cd16f84dd4e7c9137590726d6ebf489b2f7523f9c08033ec6a25ebf194a350d4a08f38cbcadfd1051b67642c970a85f6
   languageName: node
   linkType: hard
 
@@ -368,12 +489,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"readable-stream@npm:^1.1.14":
+  version: 1.1.14
+  resolution: "readable-stream@npm:1.1.14"
+  dependencies:
+    core-util-is: ~1.0.0
+    inherits: ~2.0.1
+    isarray: 0.0.1
+    string_decoder: ~0.10.x
+  checksum: 17dfeae3e909945a4a1abc5613ea92d03269ef54c49288599507fc98ff4615988a1c39a999dcf9aacba70233d9b7040bc11a5f2bfc947e262dedcc0a8b32b5a0
+  languageName: node
+  linkType: hard
+
 "scheduler@npm:^0.23.0":
   version: 0.23.0
   resolution: "scheduler@npm:0.23.0"
   dependencies:
     loose-envify: ^1.1.0
   checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  languageName: node
+  linkType: hard
+
+"stream-parser@npm:^0.3.1":
+  version: 0.3.1
+  resolution: "stream-parser@npm:0.3.1"
+  dependencies:
+    debug: 2
+  checksum: 4d86ff8cffe7c7587dc91433fff9dce38a93ea7e9f47560055addc81eae6b6befab22b75643ce539faf325fe2b17d371778242566bed086e75f6cffb1e76c06c
+  languageName: node
+  linkType: hard
+
+"string_decoder@npm:~0.10.x":
+  version: 0.10.31
+  resolution: "string_decoder@npm:0.10.31"
+  checksum: fe00f8e303647e5db919948ccb5ce0da7dea209ab54702894dd0c664edd98e5d4df4b80d6fabf7b9e92b237359d21136c95bf068b2f7760b772ca974ba970202
   languageName: node
   linkType: hard
 
@@ -394,5 +543,18 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: c034461079fbfde3cb584ddee52afccb15b6e32a0ce186d0b2719968786f7ca73e1b07f71fac4163088790b16811c6ccf79680de190664ef66ff0ba9c1fe4a23
+  languageName: node
+  linkType: hard
+
+"wav@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "wav@npm:1.0.2"
+  dependencies:
+    buffer-alloc: ^1.1.0
+    buffer-from: ^1.0.0
+    debug: ^2.2.0
+    readable-stream: ^1.1.14
+    stream-parser: ^0.3.1
+  checksum: 2c181cb1d06bc2df3fc811b67753643950ed2607093c476fbd8274ce6e69776273b152479cb4ba0ba90e21eecdbb6fa4c800249c7a83028f36cb66da58e1cf8a
   languageName: node
   linkType: hard
