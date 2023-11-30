@@ -2,27 +2,26 @@ import React, { useRef, useEffect, useContext } from 'react';
 import { AudioProviderContext } from './AudioProvider';
 
 const vertexShaderSource = `
-  attribute vec4 aVertexPosition;
-  void main() {
-      gl_Position = aVertexPosition;
-  }
+    attribute vec4 aVertexPosition;
+    void main() {
+        gl_Position = aVertexPosition;
+    }
 `;
 
-const fragmentShaderSource = `
-  precision mediump float;
-  uniform vec4 uColor;
-  void main() {
-      gl_FragColor = uColor;
-  }
-`;
-
-export const AudioVisualizer = () => {
+export const AudioVisualizer = ({ fragmentShaderSource }) => {
   const canvasRef = useRef(null);
   const shaderProgramRef = useRef(null);
-  const glRef = useRef(null);
   const audioContext = useContext(AudioProviderContext);
 
-  const setupWebGL = (gl) => {
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const gl = canvas.getContext('webgl');
+    if (!gl) {
+      console.error('Unable to initialize WebGL. Your browser may not support it.');
+      return;
+    }
+
+    // Function to create a shader
     const loadShader = (type, source) => {
       const shader = gl.createShader(type);
       gl.shaderSource(shader, source);
@@ -35,9 +34,11 @@ export const AudioVisualizer = () => {
       return shader;
     };
 
+    // Initialize shaders
     const vertexShader = loadShader(gl.VERTEX_SHADER, vertexShaderSource);
     const fragmentShader = loadShader(gl.FRAGMENT_SHADER, fragmentShaderSource);
 
+    // Create the shader program
     const shaderProgram = gl.createProgram();
     shaderProgramRef.current = shaderProgram;
     gl.attachShader(shaderProgram, vertexShader);
@@ -50,23 +51,8 @@ export const AudioVisualizer = () => {
     }
 
     gl.useProgram(shaderProgram);
-    return shaderProgram;
-  };
 
-  useEffect(() => {
-    if (!canvasRef.current || glRef.current) return;
-
-    const gl = canvasRef.current.getContext('webgl');
-    if (!gl) {
-      console.error('Unable to initialize WebGL. Your browser may not support it.');
-      return;
-    }
-
-    glRef.current = gl;
-    const shaderProgram = setupWebGL(gl);
-    if (!shaderProgram) return;
-
-    // Set up the rectangle coordinates
+    // Set up the rectangle coordinates (two triangles)
     const vertices = [-1.0, 1.0, -1.0, -1.0, 1.0, 1.0, 1.0, -1.0];
     const vertexBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
@@ -76,39 +62,33 @@ export const AudioVisualizer = () => {
     gl.vertexAttribPointer(positionAttribLocation, 2, gl.FLOAT, false, 0, 0);
     gl.enableVertexAttribArray(positionAttribLocation);
 
-    return () => {
-      gl.deleteProgram(shaderProgram);
-      gl.deleteShader(vertexShader);
-      gl.deleteShader(fragmentShader);
-      gl.deleteBuffer(vertexBuffer);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!audioContext || !shaderProgramRef.current || !glRef.current) return;
-
-    const gl = glRef.current;
-    const shaderProgram = shaderProgramRef.current;
     const colorUniformLocation = gl.getUniformLocation(shaderProgram, 'uColor');
 
     const render = () => {
-      if (!shaderProgram) return;
+      if (!shaderProgramRef.current) return;
 
       gl.clear(gl.COLOR_BUFFER_BIT);
+
       const rms = audioContext.audioFeatures?.rms || 0;
-      const color = [rms, 0.0, 0.0, 1.0];
+      const color = [rms, 0.0, 0.0, 1.0]; // Red color with varying intensity
       gl.uniform4fv(colorUniformLocation, color);
+
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       requestAnimationFrame(render);
     };
     requestAnimationFrame(render);
 
     return () => {
-      // Cleanup for rendering loop
+      if (shaderProgramRef.current) {
+        gl.deleteProgram(shaderProgramRef.current);
+      }
+      gl.deleteShader(fragmentShader);
+      gl.deleteShader(vertexShader);
+      gl.deleteBuffer(vertexBuffer);
     };
-  }, [audioContext]);
+  }, [audioContext, fragmentShaderSource]);
 
-  return <div><canvas ref={canvasRef} width="640" height="480"></canvas></div>;
+  return <canvas ref={canvasRef} width="640" height="480"></canvas>;
 };
 
 export default AudioVisualizer;

@@ -3,9 +3,16 @@ import { AudioProvider } from './AudioProvider'; // Adjust the import path as ne
 import {AudioVisualizer} from './AudioVisualizer'; // Adjust the import path as needed
 
 export const App = () => {
-  return (
+    const fragmentShader = `
+      precision mediump float;
+      uniform vec4 uColor;
+      void main() {
+          gl_FragColor = uColor;
+      }
+    `;
+    return (
     <AudioProvider>
-      <AudioVisualizer />
+         <AudioVisualizer fragmentShaderSource={fragmentShader} />
     </AudioProvider>
-  );
-}
+    );
+  };
