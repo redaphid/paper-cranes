@@ -1,39 +1,53 @@
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import Meyda from 'meyda';
 
-export type AudioFeatures = {
+// Define the type for the audio features you'll extract
+type AudioFeatures = {
     amplitudeSpectrum: Float32Array;
     rms: number;
+    // ... other features as needed
 };
 
-type FeatureCallback = (features: AudioFeatures) => void;
+// Define the context type
+type AudioProviderContextType = {
+    audioFeatures: AudioFeatures | null;
+    setAudioSource: (source: MediaElementAudioSourceNode) => void;
+};
 
-export class AudioDataProvider {
-    private meydaAnalyzer: Meyda.MeydaAnalyzer;
+// Create the context
+export const AudioProviderContext = createContext<AudioProviderContextType | null>(null);
 
-    constructor(audioContext: AudioContext, audioSource: MediaElementAudioSourceNode, features: string[], callback: FeatureCallback) {
-        this.meydaAnalyzer = Meyda.createMeydaAnalyzer({
+export const AudioProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [audioContext] = useState(() => new AudioContext());
+    const [audioFeatures, setAudioFeatures] = useState<AudioFeatures | null>(null);
+    const [meydaAnalyzer, setMeydaAnalyzer] = useState<Meyda.MeydaAnalyzer | null>(null);
+
+    const setAudioSource = useCallback((source: MediaElementAudioSourceNode) => {
+        if (meydaAnalyzer) {
+            meydaAnalyzer.stop();
+        }
+
+        const analyzer = Meyda.createMeydaAnalyzer({
             audioContext: audioContext,
-            source: audioSource,
+            source: source,
             bufferSize: 512,
-            featureExtractors: features,
-            callback: callback
+            featureExtractors: ['amplitudeSpectrum', 'rms'],
+            callback: setAudioFeatures
         });
-    }
 
-    start(): void {
-        this.meydaAnalyzer.start();
-    }
+        analyzer.start();
+        setMeydaAnalyzer(analyzer);
+    }, [audioContext]);
 
-    stop(): void {
-        this.meydaAnalyzer.stop();
-    }
-}
+    useEffect(() => {
+        return () => {
+            meydaAnalyzer?.stop();
+        };
+    }, [meydaAnalyzer]);
 
-// Usage
-const audioContext = new AudioContext();
-// Assume audioSource is already defined
-const provider = new AudioDataProvider(audioContext, audioSource, ['amplitudeSpectrum', 'rms'], (features) => {
-    // Update your components with the new data
-});
-
-provider.start();
+    return (
+            <AudioProviderContext.Provider value={{ audioFeatures, setAudioSource }}>
+                {children}
+            </AudioProviderContext.Provider>
+    );
+};
