@@ -1,20 +1,23 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { AudioProviderContext } from './AudioProvider'; // Adjust the import path as needed
 
 export const AudioVisualizer = () => {
   const audioContext = useContext(AudioProviderContext);
+  if (!audioContext) {
+    return <div>Loading...</div>;
+  }
 
-  useEffect(() => {
-    if (audioContext) {
-      // Example usage: audioContext.setAudioSource(yourAudioSource);
-      // You can also access audioFeatures: audioContext.audioFeatures;
-    }
-  }, [audioContext]);
+  // Access audio features from the context
+  const { audioFeatures } = audioContext;
+
+  // Extract the RMS value
+  const rmsValue = audioFeatures ? audioFeatures.rms : 'No data';
 
   return (
     <div>
-      {/* Render your component UI based on the context */}
-      <p>Audio Consumer Component</p>
+      <p>RMS: {rmsValue}</p>
     </div>
   );
 };
+
+export default AudioVisualizer;
