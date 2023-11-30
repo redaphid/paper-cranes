@@ -1,6 +1,24 @@
 import React, { useRef, useEffect, useContext } from 'react';
 import { AudioProviderContext } from './AudioProvider'; // Adjust the import path as needed
 
+// Vertex Shader
+const vertexShaderSource = `
+    attribute vec4 aVertexPosition;
+    void main() {
+        gl_Position = aVertexPosition;
+    }
+`;
+
+// Fragment Shader
+const fragmentShaderSource = `
+    precision mediump float;
+    uniform vec4 uColor;
+    void main() {
+        gl_FragColor = uColor;
+    }
+`;
+
+
 export const AudioVisualizer = () => {
   const canvasRef = useRef(null);
   const audioContext = useContext(AudioProviderContext);
