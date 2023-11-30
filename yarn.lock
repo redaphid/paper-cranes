@@ -159,6 +159,54 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/audioworklet@npm:^0.0.48":
+  version: 0.0.48
+  resolution: "@types/audioworklet@npm:0.0.48"
+  checksum: b6e915af06ae7cbb5043b0baba7778c162174dd036de4b953392d7f128e779e3c3e57d1513fef3b4bf78a67434b9f342016b467194ea1225f518f7066191541e
+  languageName: node
+  linkType: hard
+
+"@types/prop-types@npm:*":
+  version: 15.7.11
+  resolution: "@types/prop-types@npm:15.7.11"
+  checksum: 7519ff11d06fbf6b275029fe03fff9ec377b4cb6e864cac34d87d7146c7f5a7560fd164bdc1d2dbe00b60c43713631251af1fd3d34d46c69cd354602bc0c7c54
+  languageName: node
+  linkType: hard
+
+"@types/react-dom@npm:^18.2.17":
+  version: 18.2.17
+  resolution: "@types/react-dom@npm:18.2.17"
+  dependencies:
+    "@types/react": "*"
+  checksum: 7a4e704ed4be6e0c3ccd8a22ff69386fe548304bf4db090513f42e059ff4c65f7a427790320051524d6578a2e4c9667bb7a80a4c989b72361c019fbe851d9385
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*, @types/react@npm:^18.2.39":
+  version: 18.2.39
+  resolution: "@types/react@npm:18.2.39"
+  dependencies:
+    "@types/prop-types": "*"
+    "@types/scheduler": "*"
+    csstype: ^3.0.2
+  checksum: 9bcb1f1f060f1bf8f4730fb1c7772d0323a6e707f274efee3b976c40d92af4677df4d88e9135faaacf34e13e02f92ef24eb7d0cbcf7fb75c1883f5623ccb19f4
+  languageName: node
+  linkType: hard
+
+"@types/scheduler@npm:*":
+  version: 0.16.8
+  resolution: "@types/scheduler@npm:0.16.8"
+  checksum: 6c091b096daa490093bf30dd7947cd28e5b2cd612ec93448432b33f724b162587fed9309a0acc104d97b69b1d49a0f3fc755a62282054d62975d53d7fd13472d
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.0.2":
+  version: 3.1.2
+  resolution: "csstype@npm:3.1.2"
+  checksum: e1a52e6c25c1314d6beef5168da704ab29c5186b877c07d822bd0806717d9a265e8493a2e35ca7e68d0f5d472d43fac1cdce70fd79fd0853dff81f3028d857b5
+  languageName: node
+  linkType: hard
+
 "debug@npm:^4.3.4":
   version: 4.3.4
   resolution: "debug@npm:4.3.4"
@@ -259,13 +307,36 @@ __metadata:
   languageName: node
   linkType: hard
 
+"js-tokens@npm:^3.0.0 || ^4.0.0":
+  version: 4.0.0
+  resolution: "js-tokens@npm:4.0.0"
+  checksum: 8a95213a5a77deb6cbe94d86340e8d9ace2b93bc367790b260101d2f36a2eaf4e4e22d9fa9cf459b38af3a32fb4190e638024cf82ec95ef708680e405ea7cc78
+  languageName: node
+  linkType: hard
+
+"loose-envify@npm:^1.1.0":
+  version: 1.4.0
+  resolution: "loose-envify@npm:1.4.0"
+  dependencies:
+    js-tokens: ^3.0.0 || ^4.0.0
+  bin:
+    loose-envify: cli.js
+  checksum: 6517e24e0cad87ec9888f500c5b5947032cdfe6ef65e1c1936a0c48a524b81e65542c9c3edc91c97d5bddc806ee2a985dbc79be89215d613b1de5db6d1cfe6f4
+  languageName: node
+  linkType: hard
+
 "minimal-typescript@workspace:.":
   version: 0.0.0-use.local
   resolution: "minimal-typescript@workspace:."
   dependencies:
+    "@types/audioworklet": ^0.0.48
+    "@types/react": ^18.2.39
+    "@types/react-dom": ^18.2.17
     esbuild: ^0.18.11
     esbuild-register: ^3.4.2
-    typescript: ^5.1.6
+    react: ^18.2.0
+    react-dom: ^18.2.0
+    typescript: ^5.3.2
   languageName: unknown
   linkType: soft
 
@@ -276,22 +347,52 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.1.6":
-  version: 5.1.6
-  resolution: "typescript@npm:5.1.6"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: b2f2c35096035fe1f5facd1e38922ccb8558996331405eb00a5111cc948b2e733163cc22fab5db46992aba7dd520fff637f2c1df4996ff0e134e77d3249a7350
+"react-dom@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react-dom@npm:18.2.0"
+  dependencies:
+    loose-envify: ^1.1.0
+    scheduler: ^0.23.0
+  peerDependencies:
+    react: ^18.2.0
+  checksum: 7d323310bea3a91be2965f9468d552f201b1c27891e45ddc2d6b8f717680c95a75ae0bc1e3f5cf41472446a2589a75aed4483aee8169287909fcd59ad149e8cc
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.1.6#~builtin<compat/typescript>":
-  version: 5.1.6
-  resolution: "typescript@patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"
+"react@npm:^18.2.0":
+  version: 18.2.0
+  resolution: "react@npm:18.2.0"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.23.0":
+  version: 0.23.0
+  resolution: "scheduler@npm:0.23.0"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  languageName: node
+  linkType: hard
+
+"typescript@npm:^5.3.2":
+  version: 5.3.2
+  resolution: "typescript@npm:5.3.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: f53bfe97f7c8b2b6d23cf572750d4e7d1e0c5fff1c36d859d0ec84556a827b8785077bc27676bf7e71fae538e517c3ecc0f37e7f593be913d884805d931bc8be
+  checksum: d92534dda639eb825db013203404c1fabca8ac630564283c9e7dc9e64fd9c9346c2de95ecebdf3e6e8c1c32941bca1cfe0da37877611feb9daf8feeaea58d230
+  languageName: node
+  linkType: hard
+
+"typescript@patch:typescript@^5.3.2#~builtin<compat/typescript>":
+  version: 5.3.2
+  resolution: "typescript@patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=14eedb"
+  bin:
+    tsc: bin/tsc
+    tsserver: bin/tsserver
+  checksum: c034461079fbfde3cb584ddee52afccb15b6e32a0ce186d0b2719968786f7ca73e1b07f71fac4163088790b16811c6ccf79680de190664ef66ff0ba9c1fe4a23
   languageName: node
   linkType: hard

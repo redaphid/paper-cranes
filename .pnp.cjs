@@ -28,9 +28,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {\
           "packageLocation": "./",\
           "packageDependencies": [\
+            ["@types/audioworklet", "npm:0.0.48"],\
+            ["@types/react", "npm:18.2.39"],\
+            ["@types/react-dom", "npm:18.2.17"],\
             ["esbuild", "npm:0.18.11"],\
             ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=14eedb"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -233,6 +238,64 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["@types/audioworklet", [\
+        ["npm:0.0.48", {\
+          "packageLocation": "./.yarn/cache/@types-audioworklet-npm-0.0.48-38ccd7c8c5-b6e915af06.zip/node_modules/@types/audioworklet/",\
+          "packageDependencies": [\
+            ["@types/audioworklet", "npm:0.0.48"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/prop-types", [\
+        ["npm:15.7.11", {\
+          "packageLocation": "./.yarn/cache/@types-prop-types-npm-15.7.11-a0a5a0025c-7519ff11d0.zip/node_modules/@types/prop-types/",\
+          "packageDependencies": [\
+            ["@types/prop-types", "npm:15.7.11"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react", [\
+        ["npm:18.2.39", {\
+          "packageLocation": "./.yarn/cache/@types-react-npm-18.2.39-a6685321a8-9bcb1f1f06.zip/node_modules/@types/react/",\
+          "packageDependencies": [\
+            ["@types/react", "npm:18.2.39"],\
+            ["@types/prop-types", "npm:15.7.11"],\
+            ["@types/scheduler", "npm:0.16.8"],\
+            ["csstype", "npm:3.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/react-dom", [\
+        ["npm:18.2.17", {\
+          "packageLocation": "./.yarn/cache/@types-react-dom-npm-18.2.17-d5475408ae-7a4e704ed4.zip/node_modules/@types/react-dom/",\
+          "packageDependencies": [\
+            ["@types/react-dom", "npm:18.2.17"],\
+            ["@types/react", "npm:18.2.39"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["@types/scheduler", [\
+        ["npm:0.16.8", {\
+          "packageLocation": "./.yarn/cache/@types-scheduler-npm-0.16.8-303819b439-6c091b096d.zip/node_modules/@types/scheduler/",\
+          "packageDependencies": [\
+            ["@types/scheduler", "npm:0.16.8"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["csstype", [\
+        ["npm:3.1.2", {\
+          "packageLocation": "./.yarn/cache/csstype-npm-3.1.2-cead7d99b2-e1a52e6c25.zip/node_modules/csstype/",\
+          "packageDependencies": [\
+            ["csstype", "npm:3.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["debug", [\
         ["npm:4.3.4", {\
           "packageLocation": "./.yarn/cache/debug-npm-4.3.4-4513954577-3dbad3f94e.zip/node_modules/debug/",\
@@ -310,14 +373,38 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["js-tokens", [\
+        ["npm:4.0.0", {\
+          "packageLocation": "./.yarn/cache/js-tokens-npm-4.0.0-0ac852e9e2-8a95213a5a.zip/node_modules/js-tokens/",\
+          "packageDependencies": [\
+            ["js-tokens", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["loose-envify", [\
+        ["npm:1.4.0", {\
+          "packageLocation": "./.yarn/cache/loose-envify-npm-1.4.0-6307b72ccf-6517e24e0c.zip/node_modules/loose-envify/",\
+          "packageDependencies": [\
+            ["loose-envify", "npm:1.4.0"],\
+            ["js-tokens", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["minimal-typescript", [\
         ["workspace:.", {\
           "packageLocation": "./",\
           "packageDependencies": [\
             ["minimal-typescript", "workspace:."],\
+            ["@types/audioworklet", "npm:0.0.48"],\
+            ["@types/react", "npm:18.2.39"],\
+            ["@types/react-dom", "npm:18.2.17"],\
             ["esbuild", "npm:0.18.11"],\
             ["esbuild-register", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:3.4.2"],\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=14eedb"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -331,11 +418,55 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["typescript", [\
-        ["patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071", {\
-          "packageLocation": "./.yarn/cache/typescript-patch-bd21d74a9d-f53bfe97f7.zip/node_modules/typescript/",\
+      ["react", [\
+        ["npm:18.2.0", {\
+          "packageLocation": "./.yarn/cache/react-npm-18.2.0-1eae08fee2-88e38092da.zip/node_modules/react/",\
           "packageDependencies": [\
-            ["typescript", "patch:typescript@npm%3A5.1.6#~builtin<compat/typescript>::version=5.1.6&hash=5da071"]\
+            ["react", "npm:18.2.0"],\
+            ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["react-dom", [\
+        ["npm:18.2.0", {\
+          "packageLocation": "./.yarn/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
+          "packageDependencies": [\
+            ["react-dom", "npm:18.2.0"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:18.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-a3f73e1f9f/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
+          "packageDependencies": [\
+            ["react-dom", "virtual:8000942a81dd42a197df5584a9fe82bc064ea95cb0bf7cf92be2de9a35478ce68d83a6ee00b6dfbf05c9b0cd8b00c323b6d246ac6fe69abd9771e5ea90f4b099#npm:18.2.0"],\
+            ["@types/react", "npm:18.2.39"],\
+            ["loose-envify", "npm:1.4.0"],\
+            ["react", "npm:18.2.0"],\
+            ["scheduler", "npm:0.23.0"]\
+          ],\
+          "packagePeers": [\
+            "@types/react",\
+            "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["scheduler", [\
+        ["npm:0.23.0", {\
+          "packageLocation": "./.yarn/cache/scheduler-npm-0.23.0-a379a6bc3b-d79192eeaa.zip/node_modules/scheduler/",\
+          "packageDependencies": [\
+            ["scheduler", "npm:0.23.0"],\
+            ["loose-envify", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["typescript", [\
+        ["patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=14eedb", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-7728c2890d-c034461079.zip/node_modules/typescript/",\
+          "packageDependencies": [\
+            ["typescript", "patch:typescript@npm%3A5.3.2#~builtin<compat/typescript>::version=5.3.2&hash=14eedb"]\
           ],\
           "linkType": "HARD"\
         }]\
