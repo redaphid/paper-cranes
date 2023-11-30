@@ -1,6 +1,5 @@
 {
   "name": "minimal-typescript",
-  "packageManager": "yarn@3.6.1",
   "type": "module",
   "scripts": {
     "web": "esbuild ./src/index.tsx --format=esm --outdir=web --bundle --watch --servedir=web"

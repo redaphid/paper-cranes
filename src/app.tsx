@@ -1,5 +1,4 @@
 import React, { useCallback, useState } from "react";
-import ReactDOM from "react-dom";
 
 export const App = (props: { message: string }) => {
     const [count, setCount] = useState(0);
