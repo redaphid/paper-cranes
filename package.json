@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": " live-server --port=6969 --ignore=.git",
+    "start": "vite --port 6969 --strictPort",
     "test": "echo \"Error: no test specified\" && exit 1",
     "format": "eslint --fix ."
   },
@@ -16,7 +16,7 @@
   "devDependencies": {
     "eslint": "^8.56.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "live-server": "^1.2.2",
-    "prettier": "^3.1.1"
+    "prettier": "^3.1.1",
+    "vite": "^5.0.10"
   }
 }

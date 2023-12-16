@@ -35,7 +35,7 @@ export class AudioProcessor {
             audioProcessor.port.onmessage = (event) => (this.rawFeatures[processor] = event.data)
         }
         for (const workerName of this.thingsThatWork) {
-            const worker = new Worker(`/src/analyzers/${workerName}.js?timestamp=${timestamp}`)
+            const worker = new Worker(new URL(`./analyzers/${workerName}.js?timestamp=${timestamp}`), import.meta.url)
             console.log(`Worker ${workerName} added`)
             worker.onmessage = (event) => {
                 // console.log(`Worker ${workerName} message received`, event);;
